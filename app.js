@@ -10,7 +10,7 @@ function renderList(doc) {
     let tel_responsavel = document.createElement('span');
     let email = document.createElement('span');
     let data_nascimento = document.createElement('span');
-    let exclusao = document.createElement('button');
+    let deletar = document.createElement('button');
 
     aluno.setAttribute('data-id', doc.id);
 
@@ -80,7 +80,7 @@ btnExcluirAluno.addEventListener('click', () => {
     aluno.appendChild(tel_responsavel);
     aluno.appendChild(email);
     aluno.appendChild(data_nascimento);
-    aluno.appendChild(exclusao); // Adiciona o botão de exclusão ao item
+    aluno.appendChild(deletar); // Adiciona o botão de exclusão ao item
 
     listAluno.appendChild(aluno);
 }

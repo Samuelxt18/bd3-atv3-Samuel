@@ -2,6 +2,8 @@ body {
     background: linear-gradient(135deg, #6e7f80, #b0c4c1); /* Gradiente de fundo */
     font-family: 'Ubuntu', sans-serif; /* Fonte moderna */
     color: #333; /* Cor do texto padrão */
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove padding padrão */
 }
 
 h1 {
@@ -53,15 +55,15 @@ li span {
 
 li span:nth-child(2) {
     font-size: 16px; /* Tamanho menor para o segundo span */
-    margin-top: 6px; 
+    margin-top: 6px;
     color: #999; /* Cor mais clara para o segundo span */
 }
 
 li div {
     position: absolute;
-    top: 10px; 
-    right: 10px; 
-    background-color: #88236f; /* Cor de fundo do botão no item da lista */
+    top: 10px;
+    right: 10px;
+    background-color: #ff69b4; /* Cor de fundo rosa do botão no item da lista (substituído por rosa) */
     color: white; /* Cor do texto do botão */
     width: 50px;
     text-align: center;
@@ -73,13 +75,13 @@ li div {
 }
 
 li div:hover {
-    background-color: #6e7f80; /* Cor ao passar o mouse no botão dentro da lista */
+    background-color: #6e7f80; /* Cor ao passar o mouse no botão dentro da lista (mantido) */
 }
 
 form input {
     float: left;
-    width: calc(38% - 10px); 
-    margin-right: 5%; 
+    width: calc(38% - 10px);
+    margin-right: 5%;
     border: none;
     border-bottom: 2px solid #ccc;
     padding: 10px;
@@ -89,14 +91,14 @@ form input {
 }
 
 form input::placeholder {
-   color: #888; 
+   color: #888;
    opacity: 1;
 }
 
 form input:focus {
    outline: none;
-   border-bottom-color: #88236f;
-   box-shadow: 0 2px 5px rgba(136,35,111,0.3); /* Sombra ao focar no input */
+   border-bottom-color: #ff69b4; /* Cor rosa ao focar no input (substituído por rosa)*/
+   box-shadow: 0 2px 5px rgba(255,105,180,0.3); /* Sombra ao focar no input (substituído por rosa)*/
    transition: all ease .3s;
 }
 
@@ -109,14 +111,43 @@ button {
    border-radius: 10px;
    padding: 13px;
    width: calc(14% - 10px);
-   background-color:#88236f; 
-   color:white; 
-   font-weight:bold; 
-   cursor:pointer; 
+   background-color:#ff69b4; /* Cor de fundo rosa dos botões (substituído por rosa)*/
+   color:white;
+   font-weight:bold;
+   cursor:pointer;
    transition:.3s ease-in-out;
    box-shadow:-1px -1px 5px rgba(0,0,0,.3), inset -1px -1px rgba(255,255,255,.3);
+   border:none; /* Remove borda padrão do botão */
 }
 
 button:hover {
    background-color:#6e7f80; 
+}
+
+/* Estilo adicional para melhorar a experiência visual */
+
+button:not(:last-child) {
+   margin-right: 10px; /* Espaço entre botões se houver mais de um na linha */
+}
+
+/* Adicionando estilo responsivo */
+
+@media (max-width: 600px) {
+   h1 {
+       font-size: 36px; /* Tamanho menor em telas pequenas */
+       margin-top: 40px;
+   }
+
+   .content {
+       padding: 20px; 
+       margin-top: 20px;
+   }
+
+   form input,
+   button {
+       width: calc(100% - 10px); 
+       margin-right:none ; 
+       margin-bottom :10px ; 
+       float:none ; 
+   }
 }

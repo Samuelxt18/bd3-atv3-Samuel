@@ -10,58 +10,68 @@
     <h1>WEB APP Libre - Firebase: Firestore</h1>
     <div class="content">
         <form id="add-aluno-form">
-            <input type="text" name="nome_aluno" placeholder="Nome do aluno" required>
-            <input type="text" name="cpf" placeholder="CPF" required>
-            <input type="text" name="rg" placeholder="RG" required>
-            <input type="text" name="tel_aluno" placeholder="Telefone do aluno" required>
-            <input type="text" name="tel_responsavel" placeholder="Telefone do responsável" required>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <input type="date" name="data_nascimento" placeholder="Data de nascimento" required>
-            <button type="submit">CADASTRAR</button>
+            <input type="text" name="nome_aluno" placeholder="Nome do aluno">
+            <input type="text" name="cpf" placeholder="CPF">
+            <input type="text" name="rg" placeholder="RG">
+            <input type="text" name="tel_aluno" placeholder="Telefone do aluno">
+            <input type="text" name="tel_responsavel" placeholder="Telefone do responsável">
+            <input type="text" name="email" placeholder="E-mail">
+            <input type="text" name="data_nascimento" placeholder="Data de nascimento">
+            <button>CADASTRAR</button>
+           
         </form>
-
         <div>
             <input type="text" id="nome-aluno-excluir" placeholder="Nome do Aluno">
-            <button id="btn-excluir-aluno">Excluir Aluno</button>
+            <button id="btn-excluir-aluno">Deletar aluno</button>
         </div>
-
+        
+        
         <ul id="aluno-list"></ul>
     </div>
-
+    
     <!-- SDK do Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script> 
-    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script> 
 
     <!-- Conexão com o Firebase -->
     <script>
-        // Sua configuração do Firebase
-        // Import the functions you need from the SDKs you need
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+        const firebaseConfig = {
+           
+            apiKey: "AIzaSyD_-m8-aCfLf1mj1jQkZ3A7k8fKJaLvFpo",
+  authDomain: "aluno-app-5bea0.firebaseapp.com",
+  projectId: "aluno-app-5bea0",
+  storageBucket: "aluno-app-5bea0.firebasestorage.app",
+  messagingSenderId: "594080858879",
+  appId: "1:594080858879:web:b667a9ad917f5b77a782ca"
+     }
+            
+     
+        // Inicializa o Firebase
+        firebase.initializeApp(firebaseConfig);
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDLA-KMxBALaKqnl2qW-WKwp-QrYMUM_rY",
-  authDomain: "bd3-app-libri-samuel.firebaseapp.com",
-  projectId: "bd3-app-libri-samuel",
-  storageBucket: "bd3-app-libri-samuel.firebasestorage.app",
-  messagingSenderId: "426293785239",
-  appId: "1:426293785239:web:c9a4b2a54cd67617936fd2",
-  measurementId: "G-H63B4B8376"
-};
+        // Inicializa o Firestore
+        const db = firebase.firestore();
+        const settings = { timestampsInSnapshots: true };
+        db.settings(settings);
 
-// Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-//         // Inicializa o Firebase
-//         const app = firebase.initializeApp(firebaseConfig);
-//         const db = firebase.firestore();
+        // Exemplo de leitura do campo 'created_at' no Firestore
+        db.collection('BD3-NoSQL-Firestore').doc('aluno-app').get()
+            // .then((snapshot) => {
+            //     const timestamp = snapshot.get('data_nascimento');
+            //     if (timestamp) {
+            //         const date = timestamp.toDate();
+            //         console.log("Data convertida:", date);
+            //     } else {
+            //         console.log("Campo não encontrado .");
+            //     }
+            // })
+            // .catch((error) => {
+            //     console.error("Erro ao recuperar data:", error);
+            // });
     </script>
 
-    <!-- Carrega o script do seu aplicativo -->
     <script src="app.js"></script>
 </body>
 </html>
+
+
