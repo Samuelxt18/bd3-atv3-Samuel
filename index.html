@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BD3 - Firebase</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>WEB APP Libre - Firebase: Firestore</h1>
+    <div class="content">
+        <form id="add-aluno-form">
+            <input type="text" name="nome_aluno" placeholder="Nome do aluno" required>
+            <input type="text" name="cpf" placeholder="CPF" required>
+            <input type="text" name="rg" placeholder="RG" required>
+            <input type="text" name="tel_aluno" placeholder="Telefone do aluno" required>
+            <input type="text" name="tel_responsavel" placeholder="Telefone do responsável" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="date" name="data_nascimento" placeholder="Data de nascimento" required>
+            <button type="submit">CADASTRAR</button>
+        </form>
+
+        <div>
+            <input type="text" id="nome-aluno-excluir" placeholder="Nome do Aluno">
+            <button id="btn-excluir-aluno">Excluir Aluno</button>
+        </div>
+
+        <ul id="aluno-list"></ul>
+    </div>
+
+    <!-- SDK do Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script> 
+
+    <!-- Conexão com o Firebase -->
+    <script>
+        // Sua configuração do Firebase
+        // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDLA-KMxBALaKqnl2qW-WKwp-QrYMUM_rY",
+  authDomain: "bd3-app-libri-samuel.firebaseapp.com",
+  projectId: "bd3-app-libri-samuel",
+  storageBucket: "bd3-app-libri-samuel.firebasestorage.app",
+  messagingSenderId: "426293785239",
+  appId: "1:426293785239:web:c9a4b2a54cd67617936fd2",
+  measurementId: "G-H63B4B8376"
+};
+
+// Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);
+//         // Inicializa o Firebase
+//         const app = firebase.initializeApp(firebaseConfig);
+//         const db = firebase.firestore();
+    </script>
+
+    <!-- Carrega o script do seu aplicativo -->
+    <script src="app.js"></script>
+</body>
+</html>

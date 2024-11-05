@@ -1,0 +1,122 @@
+body {
+    background: linear-gradient(135deg, #6e7f80, #b0c4c1); /* Gradiente de fundo */
+    font-family: 'Ubuntu', sans-serif; /* Fonte moderna */
+    color: #333; /* Cor do texto padrão */
+}
+
+h1 {
+    color: #ffffff; /* Cor do título */
+    font-size: 64px; /* Tamanho do título */
+    letter-spacing: 2px; /* Espaçamento entre letras */
+    margin-top: 80px; /* Margem superior */
+    text-align: center; /* Centraliza o título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+}
+
+.content {
+    background: #ffffff; /* Fundo branco para o conteúdo */
+    max-width: 960px; /* Largura máxima */
+    margin: 30px auto; /* Centraliza o conteúdo */
+    padding: 30px; /* Padding interno */
+    border-radius: 15px; /* Cantos arredondados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra mais intensa */
+}
+
+ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0; /* Remove padding padrão */
+}
+
+li {
+    padding: 20px; /* Padding interno dos itens da lista */
+    margin-bottom: 10px; /* Espaço entre os itens da lista */
+    background: #f9f9f9; /* Cor de fundo dos itens da lista */
+    font-size: 20px; /* Tamanho da fonte */
+    color: #555; /* Cor do texto dos itens da lista */
+    position: relative; /* Para posicionamento do botão dentro do item */
+    border-radius: 10px; /* Arredonda os cantos dos itens da lista */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+}
+
+li:hover {
+    background-color: #eaeaea; /* Cor ao passar o mouse sobre o item da lista */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+li:nth-child(even) {
+    background: #f2f2f2; /* Alterna a cor de fundo para itens pares */
+}
+
+li span {
+    display: block; /* Faz com que os spans ocupem toda a largura disponível */
+}
+
+li span:nth-child(2) {
+    font-size: 16px; /* Tamanho menor para o segundo span */
+    margin-top: 6px; 
+    color: #999; /* Cor mais clara para o segundo span */
+}
+
+li div {
+    position: absolute;
+    top: 10px; 
+    right: 10px; 
+    background-color: #88236f; /* Cor de fundo do botão no item da lista */
+    color: white; /* Cor do texto do botão */
+    width: 50px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px; /* Arredondamento dos cantos do botão */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+li div:hover {
+    background-color: #6e7f80; /* Cor ao passar o mouse no botão dentro da lista */
+}
+
+form input {
+    float: left;
+    width: calc(38% - 10px); 
+    margin-right: 5%; 
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    display: block;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+form input::placeholder {
+   color: #888; 
+   opacity: 1;
+}
+
+form input:focus {
+   outline: none;
+   border-bottom-color: #88236f;
+   box-shadow: 0 2px 5px rgba(136,35,111,0.3); /* Sombra ao focar no input */
+   transition: all ease .3s;
+}
+
+form::after {
+   content: '';
+   clear: both;
+}
+
+button {
+   border-radius: 10px;
+   padding: 13px;
+   width: calc(14% - 10px);
+   background-color:#88236f; 
+   color:white; 
+   font-weight:bold; 
+   cursor:pointer; 
+   transition:.3s ease-in-out;
+   box-shadow:-1px -1px 5px rgba(0,0,0,.3), inset -1px -1px rgba(255,255,255,.3);
+}
+
+button:hover {
+   background-color:#6e7f80; 
+}
